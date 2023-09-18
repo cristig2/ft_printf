@@ -3,33 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crgallar <crgallar@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:32:17 by crgallar          #+#    #+#             */
-/*   Updated: 2023/08/29 12:32:17 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:05:41 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // ARCHIVO DE ENCABEZADOS
-
 /* Directivas de preprocesador:
 Estas directivas aseguran que el contenido del archivo de encabezado solo se
 incluirá una vez, evitando problemas de redefinición en caso de que el archivo
 se incluya múltiples veces en diferentes partes del código. */
 
 #ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+# define FT_PRINTF_H
 
 /* Inclusión de bibliotecas estándar (#include):
 Se está incluyendo las bibliotecas estándar necesarias, para que las funciones
 y tipos definidos en estas bibliotecas estén disponibles en el archivo de
 encabezado. */
 
-#include <unistd.h>
-#include <stdarg.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <stddef.h>
+# include <unistd.h>
+# include <stdarg.h>
+# include <stddef.h>
+# include <stdlib.h>
+# include <stddef.h>
 
 
 /* Prototipos de funciones:
