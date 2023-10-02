@@ -6,7 +6,7 @@
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:21:06 by crgallar          #+#    #+#             */
-/*   Updated: 2023/10/02 09:53:25 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/02 12:20:12 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* La función ft_number:
 
-Imprime un número entero en la salida estándar.
+Imprime un número entero en base 10.
 Maneja casos especiales como el número más negativo (-2147483648).
 Utiliza recursión para imprimir cada dígito por separado.
 Incrementa el contador (length) según la cantidad de caracteres impresos.*/
@@ -41,3 +41,14 @@ void	ft_number(int num, int *len)
 		ft_putcharacter_length(num % 10 + '0', len);
 	}
 }
+/*
+int	main(void)
+{
+	int num = 345;
+	int len = 0;
+
+	ft_number(num, &len);
+	printf("\nLongitud de la variable num: %d\n", len);
+	return (0);
+}
+*/

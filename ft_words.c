@@ -6,7 +6,7 @@
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:46:15 by crgallar          #+#    #+#             */
-/*   Updated: 2023/10/02 10:24:58 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/02 12:06:08 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,9 @@ int	main(void)
 {
 	char* str = "Name: Cristina";
 	int len = 0;
-	char newline = '\n';
 
 	ft_string(str, &len);
-	printf("%cLongitud de la variable str: %d", newline, len);
+	printf("\nLongitud de la variable str: %d\n", len);
 	return (0);
 }
 */
