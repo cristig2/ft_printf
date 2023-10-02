@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_words.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crgallar <crgallar@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:46:15 by crgallar          #+#    #+#             */
-/*   Updated: 2023/08/30 14:46:15 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/02 10:21:22 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_string(char *arg, int *len)
 	{
 		write(1, "(null)", 6);
 		(*len) += 6;
-		return 0;
+		//return (0);
 	}
 	while (arg[i] != '\0')
 	{
@@ -44,7 +44,6 @@ void	ft_string(char *arg, int *len)
 	}
 }
 
-/*
 int	main(void)
 {
 	char* str = "Name: Cristina";
@@ -55,4 +54,3 @@ int	main(void)
 	printf("%cLongitud de la variable str: %d", newline, len);
 	return (0);
 }
-*/

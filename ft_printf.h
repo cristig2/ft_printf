@@ -6,7 +6,7 @@
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:32:17 by crgallar          #+#    #+#             */
-/*   Updated: 2023/09/18 13:05:41 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/02 10:02:01 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,16 @@ encabezado. */
 # include <stddef.h>
 # include <stdlib.h>
 # include <stddef.h>
-
+# include <stdio.h>
 
 /* Prototipos de funciones:
 Se declaran los prototipos de las funciones que se implementan en el proyecto.
-Cada prototipo enumera el tipo de retorno, el nombre de la función y los 
+Cada prototipo enumera el tipo de retorno(void), el nombre de la función y los 
 parámetros que la función espera recibir. */
 
 void	ft_putcharacter_length(char character, int *length);
 void	ft_string(char *args, int *length);
 
 void	ft_number(int num, int *len);
-void	ft_pointer(size_t ptr, int *len);
-void	ft_hexadecimal(unsigned int x, int *length, char x_or_x);
-void	ft_unsigned_int(unsigned int u, int *length);
 
 #endif
