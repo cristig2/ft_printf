@@ -6,7 +6,7 @@
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:32:17 by crgallar          #+#    #+#             */
-/*   Updated: 2023/10/02 10:02:01 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/04 13:32:46 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,13 @@ Se declaran los prototipos de las funciones que se implementan en el proyecto.
 Cada prototipo enumera el tipo de retorno(void), el nombre de la función y los 
 parámetros que la función espera recibir. */
 
+size_t	ft_strlen(const char *str);
 void	ft_putcharacter_length(char character, int *length);
 void	ft_string(char *args, int *length);
 
+int		ft_numlen(int num);
+char	*ft_itoa(int num);
 void	ft_number(int num, int *len);
+void	ft_unsigned(unsigned int num, int *len);
 
 #endif

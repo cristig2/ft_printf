@@ -6,15 +6,30 @@
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:46:15 by crgallar          #+#    #+#             */
-/*   Updated: 2023/10/02 12:06:08 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/04 13:31:23 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/* La función ft_putcharacter_length simplemente imprime un carácter en la
-salida estándar utilizando la función write y aumenta el contador de longitud
-(len) para realizar un seguimiento de cuántos caracteres se han impreso.*/
+/* La función ft_strlen:
+Calcula & devuelve la longuitud de una cadena.
+*/
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+/* La función ft_putcharacter_length:
+Imprime un carácter en la salida estándar utilizando la función write y aumenta
+el contador de longitud (len) para realizar un seguimiento de cuántos caracteres
+se han impreso.*/
 
 void	ft_putcharacter_length(char chartr, int *len)
 {
@@ -22,23 +37,24 @@ void	ft_putcharacter_length(char chartr, int *len)
 	(*len)++;
 }
 
-/* La función ft_string se encarga de imprimir cadenas de caracteres. Si arg
-es NULL, imprime la cadena "(null)". Si no es NULL, itera sobre cada carácter
-de la cadena y lo imprime utilizando la función ft_putcharacter_length.*/
+/* La función ft_string:
+Se encarga de imprimir cadenas de caracteres. Si arg es NULL, imprime la cadena 
+"(null)". Si no es NULL, itera sobre cada carácter de la cadena y lo imprime 
+utilizando la función ft_putcharacter_length.*/
 
-void	ft_string(char *arg, int *len)
+void	ft_string(char *str, int *len)
 {
 	size_t	i;
 
-	i = 0;
-	if (!arg)
+	if (!str)
 	{
 		write(1, "(null)", 6);
 		(*len) += 6;
 	}
-	while (arg[i] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		ft_putcharacter_length(arg[i], len);
+		ft_putcharacter_length(str[i], len);
 		i++;
 	}
 }
