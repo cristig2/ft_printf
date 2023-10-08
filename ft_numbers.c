@@ -13,40 +13,49 @@
 #include "ft_printf.h"
 
 /* La función ft_numlen:
-Calcula & devuelve la longuitud de un entero.
-*/
+Calcula la cantidad de dígitos en un número entero.
+Esta función determina la cantidad de dígitos en un número entero, incluyendo
+el signo negativo si el número es negativo. Se cuenta un dígito adicional para 
+el signo en números menores o iguales a cero.
+Devuelve la cantidad de dígitos del número especificado, incluyendo el signo.*/
 
-int	ft_numlen(int num)
+int	ft_numlen(int n)
 {
 	int	len;
 
 	len = 0;
-	if (num <= 0)
+	if (n <= 0)
 		len++;
-	while (num)
+	while (n != 0)
 	{
-		num = num / 10;
+		n = n / 10;
 		len++;
 	}
 	return (len);
 }
 
 /* La función ft_itoa:
-Toma un número entero y lo convierte en una string que representa ese número
+Convierte un número entero a una cadena de caracteres.
+La cadena resultante puede incluir el signo '-' en caso de números
+negativos.
+Devuelve un puntero a la cadena de caracteres que representa el número 
+(incluyendo el signo). Si hay un error de memoria, devuelve NULL.
 */
 
-char	*ft_itoa(int num)
+char	*ft_itoa(int n)
 {
 	char		*str;
 	int			len;
 	long int	nb;
 
-	nb = num;
+	nb = n;
 	len = ft_numlen(nb);
-	str = (char *)malloc(len + 1);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
-	str[0] = '0';
+		str[len--] = '\0';
+	if (nb == 0)
+		str[0] = '0';
 	str[len] = '\0';
 	if (nb < 0)
 	{
@@ -55,72 +64,40 @@ char	*ft_itoa(int num)
 	}
 	while (nb > 0)
 	{
-		len--;
 		str[len] = nb % 10 + 48;
 		nb = nb / 10;
+		len--;
 	}
 	return (str);
 }
 
-/* La función ft_number:
+//pointer
 
-Imprime un número decimal (base 10).
-Imprime un número entero en base 10.
-Maneja casos especiales como el número más negativo (-2147483648).
-Utiliza recursión para imprimir cada dígito por separado.
-Incrementa el contador (len) según la cantidad de caracteres impresos.*/
-
-void	ft_number(int num, int *len)
+void	ft_pointer(size_t pointer, int *length)
 {
-	if (num == -2147483648)
+	char	string[25];
+	int		i;
+	char	*base_character;
+
+	base_character = "0123456789abcdef";
+	i = 0;
+	write(1, "0x", 2);
+	(*length) += 2;
+	if (pointer == 0)
 	{
-		write(1, "-2147483648", 11);
-		(*len) += 11;
+		ft_putchar('0');
+		length++;
 		return ;
 	}
-	if (num < 0)
+	while (pointer != 0)
 	{
-		ft_putcharacter_length('-', len);
-		ft_number(num * -1, len);
+		string[i] = base_character[pointer % 16];
+		pointer = pointer / 16;
+		i++;
 	}
-	else
+	while (i--)
 	{
-		if (num > 9)
-		{
-			ft_number(num / 10, len);
-		}
-		ft_putcharacter_length(num % 10 + '0', len);
+		ft_putchar(string[i]);
+		length++;
 	}
-}
-/*
-int	main(void)
-{
-	int num = -345;
-	int len = 0;
-
-	ft_number(num, &len);
-	printf("\nLongitud de la variable num: %d\n", len);
-	return (0);
-}
-*/
-
-void	ft_unsigned(unsigned int num, int *len)
-{
-	if (num < 0)
-		num = num * -1;
-	if (num > 9)
-	{
-		ft_unsigned(num / 10, len);
-	}
-	ft_putcharacter_length(num % 10 + '0', len);
-}
-
-int	main(void)
-{
-	unsigned int num = -323;
-	int len = 0;
-
-	ft_unsigned(num, &len);
-	printf("\nLongitud de la%d variable num: %d\n", len);
-	return (0);
 }
