@@ -37,12 +37,11 @@ Cada prototipo enumera el tipo de retorno(void), el nombre de la función y los
 parámetros que la función espera recibir. */
 
 size_t	ft_strlen(const char *str);
-void	ft_putcharacter_length(char character, int *length);
-void	ft_string(char *args, int *length);
-
+void	ft_putchar(char character);
+void	ft_putstr(char *args);
 int		ft_numlen(int num);
 char	*ft_itoa(int num);
-void	ft_number(int num, int *len);
-void	ft_unsigned(unsigned int num, int *len);
+int	ft_printf(const char *strph, ...);
+int	ft_check_percen(char change, va_list args, int count);
 
 #endif
