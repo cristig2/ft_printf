@@ -6,7 +6,7 @@
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:46:15 by crgallar          #+#    #+#             */
-/*   Updated: 2023/10/04 13:31:23 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/09 09:33:47 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t	ft_strlen(const char *str)
 /* La función ft_putchar:
 Imprime un carácter en la salida estándar utilizando la función write*/
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1)
@@ -44,7 +44,7 @@ Se encarga de imprimir cadenas de caracteres. Si arg es NULL, imprime la cadena
 "(null)". Si no es NULL, itera sobre cada carácter de la cadena y lo imprime 
 utilizando la función ft_putchar.*/
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	size_t	i;
 
@@ -59,5 +59,5 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
-	return (i)
+	return (i);
 }

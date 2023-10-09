@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_percentage.c                              :+:      :+:    :+:   */
+/*   ft_check_percen.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:33:28 by crgallar          #+#    #+#             */
-/*   Updated: 2023/10/04 13:34:48 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/09 09:24:06 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,10 @@ int	ft_check_percen(char change, va_list args, int count)
 	}
 	return (count);
 }
+/*int main ()
+{
+	char	percentage = 's';
+	va_list	args;
+	int count = 0;
+}
+*/
