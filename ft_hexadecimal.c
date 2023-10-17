@@ -18,7 +18,7 @@ Escribe el carácter correspondiente al resto de la división por 16.
 Este proceso se realiza de manera recursiva hasta convertir todo el número en 
 su representación hexadecimal.
  */
-void	ft_base_hexa(int num)
+int	ft_base_hexa(int num)
 {
 	char	*hexa;
 	int		len;
@@ -29,6 +29,7 @@ void	ft_base_hexa(int num)
 		len += ft_base_hexa(num / 16);
 	write (1, &hexa[num % 16], 1);
 	len++;
+	return (len);
 }
 
 /*La funcion ft_pointer:
@@ -36,48 +37,69 @@ Usa como parametro size_t para almacenar valores no negativos.
 Imprime 0x al principio para indicar que esta en numero hexadecimal e imprime 
 a continuacion el numero hexadecimal mediante la funcion ft_base_hexa.*/
 
-void	ft_pointer(size_t pointer)
+int	ft_pointer(size_t pointer)
 {
-    char strhex[25];
-	int	len;
+    size_t len;
 
-    len = 0;
-	write (1, "0x", 2);
-    len += 2;
-	strhex = ft_base_hexa(pointer);
-	write (1, &strhex, 1);
-	len += ft_strlen(strhex);
+	write(1, "0x", 2);
+    len = ft_base_hexa((int)pointer) + 2;
+    return (len);
 }
 
 /*La funcion ft_lower_hexa: Hace la conversion de decimal a hexadecimal de la 
 misma forma que ft_base_hexa pero en el caso de un placeholder de x mayuscula.*/
 
-void	ft_lower_hexa(int num, char charph)
+int	ft_lower_hexa(int num, char charph)
 {
 	char	*hexa_lower;
 	int		len;
-	if (charph == 'x')
-		hexa_lower = "0123456789abcdef";
+
+
+	hexa_lower = "0123456789abcdef";
 	len = 0;
-	if (num >= 16)
-		len += ft_lower_hexa(num / 16);
+	if (charph == 'x' && num >= 16)
+		len += ft_lower_hexa(num / 16, charph);
 	write (1, &hexa_lower[num % 16], 1);
 	len++;
+	return (len);
 }
 
 /*La funcion ft_upper_hexa: Hace la conversion de decimal a hexadecimal de la 
 misma forma que ft_base_hexa pero en el caso de un placeholder de X mayuscula.*/
 
-void	ft_upper_hexa(int num, char charph)
+int	ft_upper_hexa(int num, char charph)
 {
 	char	*hexa_upper;
 	int		len;
-	if (charph == 'X')
-		hexa_upper = "0123456789ABCDEF";
+
+	hexa_upper = "0123456789ABCDEF";
 	len = 0;
-	if (num >= 16)
-		len += ft_upper_hexa(num / 16);
+	if (charph == 'X' && num >= 16)
+		len += ft_lower_hexa(num / 16, charph);
 	write (1, &hexa_upper[num % 16], 1);
 	len++;
+	return (len);
 }
+/*
+int main() {
+    int num = 255;
 
+    printf("Base Hexadecimal: ");
+    size_t len_base_hex = ft_base_hexa(num);
+    printf("\nLongitud de la representación hexadecimal: %d\n", len_base_hex);
+
+    size_t pointer = 0x12345678;
+    printf("Puntero en Hexadecimal: ");
+    size_t len_pointer_hex = ft_pointer(pointer);
+    printf("\nLongitud de la representación hexadecimal del puntero: %d\n", len_pointer_hex);
+
+    printf("Lowercase Hexadecimal: ");
+    size_t len_lower_hex = ft_lower_hexa(num, 'x');
+    printf("\nLongitud de la representación hexadecimal en minúsculas: %d\n", len_lower_hex);
+
+    printf("Uppercase Hexadecimal: ");
+    size_t len_upper_hex = ft_upper_hexa(num, 'X');
+    printf("\nLongitud de la representación hexadecimal en mayúsculas: %d\n", len_upper_hex);
+
+    return 0;
+}*/

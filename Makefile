@@ -7,8 +7,11 @@ NAME = libftprintf.a
 # Enumera las rutas de los archivos fuente que se utilizarán para 
 # compilar la libreria.
 
-FILES = ./sources/ft_words.c \
-		./sources/ft_numbers.c\
+FILES = ft_words.c \
+		ft_numbers.c\
+		ft_hexadecimal.c\
+		ft_check_percen.c\
+		ft_printf.c\
 
 # Define el compilador que se utilizará para compilar los archivos fuente.
 

@@ -19,16 +19,16 @@ el signo negativo si el número es negativo. Se cuenta un dígito adicional para
 el signo en números menores o iguales a cero.
 Devuelve la cantidad de dígitos del número especificado, incluyendo el signo.*/
 
-int	ft_numlen(int n)
+int	ft_numlen(int num)
 {
-	int	len;
+    int len;
 
 	len = 0;
-	if (n <= 0)
+	if (num <= 0)
 		len++;
-	while (n != 0)
+	while (num != 0)
 	{
-		n = n / 10;
+		num = num / 10;
 		len++;
 	}
 	return (len);
@@ -42,13 +42,13 @@ Devuelve un puntero a la cadena de caracteres que representa el número
 (incluyendo el signo). Si hay un error de memoria, devuelve NULL.
 */
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int num)
 {
 	char		*str;
 	int			len;
-	long int	nb;
+	int	nb;
 
-	nb = n;
+	nb = num;
 	len = ft_numlen(nb);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
@@ -70,3 +70,16 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
+
+/*
+int main() {
+    int num = -12345;
+    char *result = ft_itoa(num);
+
+    printf("Numero convertido a cadena: %s\n", result);
+
+    // Liberar la memoria asignada
+    free(result);
+
+    return 0;
+}*/

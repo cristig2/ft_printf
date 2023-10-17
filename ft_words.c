@@ -31,16 +31,19 @@ size_t	ft_strlen(const char *str)
 }
 
 /* La función ft_putchar:
-Imprime un carácter en la salida estándar utilizando la función write*/
+Imprime un carácter en la salida estándar utilizando la función write.
+Después de escribir exitosamente el carácter, la función retorna 1 para indicar
+que se ha escrito un carácter. Esto permite saber cuántos caracteres se han
+enviado exitosamente a la salida.*/
 
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (1)
+	return (1);
 }
 
 /* La función ft_putstr:
-Se encarga de imprimir cadenas de caracteres. Si arg es NULL, imprime la cadena 
+Se encarga de imprimir cadenas de caracteres. Si str es NULL, imprime la cadena 
 "(null)". Si no es NULL, itera sobre cada carácter de la cadena y lo imprime 
 utilizando la función ft_putchar.*/
 
@@ -61,3 +64,22 @@ int	ft_putstr(char *str)
 	}
 	return (i);
 }
+/*
+int main() {
+    // Prueba ft_putchar
+    printf("Escribiendo el carácter 'A': ");
+    ft_putchar('A');
+    printf("\n");
+
+    // Prueba ft_putstr
+    printf("Imprimiendo una cadena: ");
+    ft_putstr("Hola, mundo!");
+    printf("\n");
+
+    // Prueba ft_strlen
+    const char *cadena = "Hola, mundo!";
+    printf("Longitud de la cadena: %d\n", ft_strlen(cadena));
+
+    return 0;
+}
+*/
