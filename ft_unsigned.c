@@ -1,13 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_unsigned.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/18 10:01:32 by crgallar          #+#    #+#             */
+/*   Updated: 2023/10/18 10:40:05 by crgallar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int	unsig_numlen(unsigned long num)
+/* La función ft_unsig_numlen:
+Calcula la cantidad de dígitos en un número entero.
+Esta función determina la cantidad de dígitos en un número sin signo.
+Devuelve la cantidad de dígitos del número especificado*/
+
+int	ft_unsig_numlen(unsigned long num)
 {
 	int	len;
 
 	len = 0;
 	if (num == 0)
 		len ++;
-	while (n)
+	while (num)
 	{
 		num = num / 10;
 		len++;
@@ -15,6 +32,11 @@ int	unsig_numlen(unsigned long num)
 	return (len);
 }
 
+/* La función ft_itoa:
+Convierte un número sin signo a una cadena de caracteres.
+Devuelve un puntero a la cadena de caracteres que representa el número.
+Si hay un error de memoria, devuelve NULL.
+*/
 char	*ft_unsig_itoa(unsigned int num)
 {
 	char			*str;
@@ -22,7 +44,7 @@ char	*ft_unsig_itoa(unsigned int num)
 	unsigned long	nb;
 
 	nb = num;
-	len = unsig_numlen(nb);
+	len = ft_unsig_numlen(nb);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);

@@ -10,6 +10,7 @@ NAME = libftprintf.a
 FILES = ft_words.c \
 		ft_numbers.c\
 		ft_hexadecimal.c\
+		ft_unsigned.c\
 		ft_check_percen.c\
 		ft_printf.c\
 

@@ -6,7 +6,7 @@
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:32:17 by crgallar          #+#    #+#             */
-/*   Updated: 2023/10/04 13:32:46 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/18 12:37:46 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ Cada prototipo enumera el tipo de retorno(void), el nombre de la función y los
 parámetros que la función espera recibir. */
 
 size_t	ft_strlen(const char *str);
-int	    ft_putchar(char c);
-int	    ft_putstr(char *str);
-int	    ft_numlen(int num);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_numlen(int num);
 char	*ft_itoa(int num);
-int	    ft_base_hexa(int num);
-int	    ft_pointer(size_t pointer);
-int	    ft_lower_hexa(int num, char charph);
-int	    ft_upper_hexa(int num, char charph);
-int	    unsig_numlen(unsigned long n);
-char	*ft_unsig_itoa(unsigned int n);
-int	    ft_check_percen(char change, va_list *args);
-int	    ft_printf(const char *strph, ...);
+int		ft_base_hexa(int num);
+int		ft_pointer(size_t pointer);
+int		ft_lower_hexa(int num);
+int		ft_upper_hexa(int num);
+int		ft_unsig_numlen(unsigned long num);
+char	*ft_unsig_itoa(unsigned int num);
+int		ft_check_percen(char change, va_list *args);
+int		ft_printf(const char *strph, ...);
 
 #endif
