@@ -6,7 +6,7 @@
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:21:06 by crgallar          #+#    #+#             */
-/*   Updated: 2023/10/18 09:57:52 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:50:47 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,16 @@ Devuelve un puntero a la cadena de caracteres que representa el número
 
 char	*ft_itoa(int num)
 {
-	char	*str;
-	int		len;
-	int		nb;
+	char		*str;
+	int			len;
+	long int	nb;
 
 	nb = num;
 	len = ft_numlen(nb);
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	str = (char *)malloc((len + 1));
 	if (!str)
 		return (0);
-		str[len--] = '\0';
-	if (nb == 0)
-		str[0] = '0';
+	str[0] = '0';
 	str[len] = '\0';
 	if (nb < 0)
 	{
@@ -64,9 +62,9 @@ char	*ft_itoa(int num)
 	}
 	while (nb > 0)
 	{
+		len--;
 		str[len] = nb % 10 + 48;
 		nb = nb / 10;
-		len--;
 	}
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:29:10 by crgallar          #+#    #+#             */
-/*   Updated: 2023/10/18 12:48:34 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:09:43 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ Escribe el carácter correspondiente al resto de la división por 16.
 Este proceso se realiza de manera recursiva hasta convertir todo el número en 
 su representación hexadecimal.
  */
-int	ft_base_hexa(int num)
+int	ft_base_hexa(size_t num)
 {
-	char	*hexa;
-	int		len;
+	char		*hexa;
+	size_t		len;
 
 	hexa = "0123456789abcdef";
 	len = 0;
@@ -44,7 +44,7 @@ int	ft_pointer(size_t pointer)
 	size_t	len;
 
 	write(1, "0x", 2);
-	len = ft_base_hexa((int)pointer) + 2;
+	len = ft_base_hexa(pointer) + 2;
 	return (len);
 }
 
@@ -52,7 +52,7 @@ int	ft_pointer(size_t pointer)
 Hace la conversion de decimal a hexadecimal de la misma forma que ft_base_hexa
 pero en el caso de un placeholder de x mayuscula.*/
 
-int	ft_lower_hexa(int num)
+int	ft_lower_hexa(unsigned int num)
 {
 	char	*hexa_lower;
 	int		len;
@@ -60,7 +60,7 @@ int	ft_lower_hexa(int num)
 	hexa_lower = "0123456789abcdef";
 	len = 0;
 	if (num >= 16)
-		ft_lower_hexa(num / 16);
+		len += ft_lower_hexa(num / 16);
 	write (1, &hexa_lower[num % 16], 1);
 	len++;
 	return (len);
@@ -70,7 +70,7 @@ int	ft_lower_hexa(int num)
 Hace la conversion de decimal a hexadecimal de la misma forma que ft_base_hexa
 pero en el caso de un placeholder de X mayuscula.*/
 
-int	ft_upper_hexa(int num)
+int	ft_upper_hexa(unsigned int num)
 {
 	char	*hexa_upper;
 	int		len;

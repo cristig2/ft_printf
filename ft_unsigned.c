@@ -6,7 +6,7 @@
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:01:32 by crgallar          #+#    #+#             */
-/*   Updated: 2023/10/18 10:40:05 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:53:10 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,15 @@ char	*ft_unsig_itoa(unsigned int num)
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
-		str[len--] = '\0';
 	str[0] = '0';
 	str[len] = '\0';
 	if (nb < 0)
 		nb = nb * -1;
 	while (nb > 0)
 	{
+		len--;
 		str[len] = nb % 10 + 48;
 		nb = nb / 10;
-		len--;
 	}
 	return (str);
 }

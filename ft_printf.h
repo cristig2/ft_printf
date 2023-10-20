@@ -6,7 +6,7 @@
 /*   By: crgallar <crgallar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:32:17 by crgallar          #+#    #+#             */
-/*   Updated: 2023/10/18 12:37:46 by crgallar         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:46:26 by crgallar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ int		ft_putchar(char c);
 int		ft_putstr(char *str);
 int		ft_numlen(int num);
 char	*ft_itoa(int num);
-int		ft_base_hexa(int num);
+int		ft_base_hexa(size_t num);
 int		ft_pointer(size_t pointer);
-int		ft_lower_hexa(int num);
-int		ft_upper_hexa(int num);
+int		ft_lower_hexa(unsigned int num);
+int		ft_upper_hexa(unsigned int num);
 int		ft_unsig_numlen(unsigned long num);
 char	*ft_unsig_itoa(unsigned int num);
-int		ft_check_percen(char change, va_list *args);
+int		ft_check_percen(char change, va_list args);
 int		ft_printf(const char *strph, ...);
 
 #endif
